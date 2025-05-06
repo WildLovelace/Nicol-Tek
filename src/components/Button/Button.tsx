@@ -19,13 +19,21 @@ const Button: React.FC<ButtonProps> = ({
     fullWidth = false,
     type = 'button',
 }) => {
+    const handleClick = (e: React.MouseEvent) => {
+        if (onClick) {
+            onClick();
+        } else {
+            window.location.href = 'https://wa.me/79525830337';
+        }
+    };
+
     return (
         <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
         >
             <ButtonContainer
-                onClick={onClick}
+                onClick={handleClick}
                 variant={variant}
                 size={size}
                 fullWidth={fullWidth}

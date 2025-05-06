@@ -13,7 +13,7 @@ export const HeaderContainer = styled.header<HeaderContainerProps>`
   width: 100%;
   z-index: 1000;
   background-color: ${({ isScrolled }) =>
-    isScrolled ? 'rgba(44, 62, 80, 0.95)' : 'transparent'};
+    isScrolled ? 'rgba(44, 62, 80, 0.8)' : 'transparent'};
   transition: all 0.3s ease;
   padding: 1rem 0;
   backdrop-filter: ${({ isScrolled }) => (isScrolled ? 'blur(10px)' : 'none')};

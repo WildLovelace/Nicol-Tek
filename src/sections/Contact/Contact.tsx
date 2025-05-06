@@ -47,29 +47,46 @@ const Contact: React.FC = () => {
                     <ContactInfo>
                         <h3>Контактная информация</h3>
                         <p>Мы всегда рады новым клиентам и сотрудникам. Свяжитесь с нами удобным для вас способом.</p>
+                        <div className="conteiner">
+                            <div className="map-and-contact">
+                                <div className="contacts">
+                                    <div className="contact-item">
+                                        <PhoneIcon />
+                                        <div>
+                                            <h4>Телефон</h4>
+                                            <p>+79525830337</p>
+                                        </div>
+                                    </div>
 
-                        <div className="contact-item">
-                            <PhoneIcon />
-                            <div>
-                                <h4>Телефон</h4>
-                                <p>+79525830337</p>
+                                    <div className="contact-item">
+                                        <EnvelopeIcon />
+                                        <div>
+                                            <h4>Email</h4>
+                                            <p>NikolTEK1@yandex.ru</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="contact-item">
+                                        <MapMarkerAltIcon />
+                                        <div>
+                                            <h4>Адрес</h4>
+                                            <p>Соборный 94/139</p>
+                                            <p>6 Этаж</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6bfadd3c23eb8529c4a0011f81fffbc3b0ecd7d10cdc7c5c7ae761558f766c97&amp;source=constructor" width="600" height="400"></iframe>
                             </div>
-                        </div>
-
-                        <div className="contact-item">
-                            <EnvelopeIcon />
-                            <div>
-                                <h4>Email</h4>
-                                <p>NikolTEK1@yandex.ru</p>
-                            </div>
-                        </div>
-
-                        <div className="contact-item">
-                            <MapMarkerAltIcon />
-                            <div>
-                                <h4>Адрес</h4>
-                                <p>Соборный 94/139</p>
-                                <p>6 Этаж</p>
+                            <div className="img-conteiner">
+                                <img src="images/assets/team.png" alt="Team" />
+                                <div className="btn-conteiner">
+                                    <Button variant="primary" size="large" >
+                                        Стать клиентом
+                                    </Button>
+                                    <Button variant="primary" size="large" >
+                                        Присоединиться к команде
+                                    </Button>
+                                </div>
                             </div>
                         </div>
                     </ContactInfo>
@@ -81,32 +98,6 @@ const Contact: React.FC = () => {
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
                 >
-                    <ContactForm onSubmit={handleSubmit}>
-                        <h3>Отправить сообщение</h3>
-                        <FormGroup>
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Ваше имя"
-                                value={formData.name}
-                                onChange={handleChange}
-                                required
-                            />
-                        </FormGroup>
-                        <FormGroup>
-                            <input
-                                type="tel"
-                                name="phone"
-                                placeholder="Ваш телефон"
-                                value={formData.phone}
-                                onChange={handleChange}
-                                required
-                            />
-                        </FormGroup>
-                        <Button type="submit" variant="primary" fullWidth>
-                            Отправить
-                        </Button>
-                    </ContactForm>
                 </motion.div>
             </ContactContainer>
         </Section>

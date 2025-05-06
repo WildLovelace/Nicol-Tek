@@ -35,13 +35,13 @@ const Hero: React.FC = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <HeroSubtitle>Добро пожаловать в</HeroSubtitle>
-                    <HeroTitle>НИКОЛЬ ТЕК</HeroTitle>
+                    <HeroTitle>НИКОЛЬ ТЭК</HeroTitle>
                     <p>Надежный посредник между перевозчиками и заказчиками. Мы создаем мосты между вашими грузами и их пунктом назначения.</p>
                     <HeroButtons>
-                        <Button variant="primary" size="large" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+                        <Button variant="primary" size="large" >
                             Стать клиентом
                         </Button>
-                        <Button variant="primary" size="large" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
+                        <Button variant="primary" size="large" >
                             Присоединиться к команде
                         </Button>
                     </HeroButtons>

@@ -21,7 +21,7 @@ const Team: React.FC = () => {
         {
             name: 'Опытные специалисты',
             position: 'Команда менеджеров',
-            photo: '/images/assets/2.jpg',
+            photo: '/images/assets/8.jpg',
         },
         {
             name: 'Слаженная работа',
@@ -51,7 +51,7 @@ const Team: React.FC = () => {
         {
             name: 'Опытные специалисты',
             position: 'Команда менеджеров',
-            photo: '/images/assets/8.jpg',
+            photo: '/images/assets/2.jpg',
         },
         {
             name: 'Слаженная работа',
@@ -60,31 +60,24 @@ const Team: React.FC = () => {
         },
     ];
 
-    const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentGroup, setCurrentGroup] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+    const slidesPerGroup = 3;
+    const totalGroups = Math.ceil(teamMembers.length / slidesPerGroup);
 
     useEffect(() => {
         let interval: NodeJS.Timeout;
         if (isAutoPlaying) {
             interval = setInterval(() => {
-                setCurrentSlide(prev => (prev + 1) % teamMembers.length);
+                setCurrentGroup(prev => (prev + 1) % totalGroups);
             }, 5000);
         }
         return () => clearInterval(interval);
-    }, [isAutoPlaying, teamMembers.length]);
+    }, [isAutoPlaying, totalGroups]);
 
-    const nextSlide = () => {
-        setCurrentSlide(prev => (prev + 1) % teamMembers.length);
-        setIsAutoPlaying(false);
-    };
 
-    const prevSlide = () => {
-        setCurrentSlide(prev => (prev - 1 + teamMembers.length) % teamMembers.length);
-        setIsAutoPlaying(false);
-    };
-
-    const goToSlide = (index: number) => {
-        setCurrentSlide(index);
+    const goToGroup = (index: number) => {
+        setCurrentGroup(index);
         setIsAutoPlaying(false);
     };
 
@@ -93,47 +86,59 @@ const Team: React.FC = () => {
             <TeamContainer>
                 <TeamSlider
                     style={{
-                        transform: `translateX(-${currentSlide * 100}%)`,
+                        transform: `translateX(-${currentGroup * 100}%)`,
                         transition: 'transform 0.5s ease-in-out'
                     }}
                 >
-                    {teamMembers.map((member, index) => (
-                        <TeamSlide key={index}>
-                            <TeamMember>
-                                <div className="photo-container">
-                                    <img
-                                        src={member.photo}
-                                        alt={member.name}
-                                        loading="lazy"
-                                    />
-                                </div>
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ duration: 0.5 }}
-                                >
-                                </motion.div>
-                            </TeamMember>
+                    {Array.from({ length: totalGroups }).map((_, groupIndex) => (
+                        <TeamSlide key={groupIndex} className="slide-group">
+                            {teamMembers
+                                .slice(groupIndex * slidesPerGroup, groupIndex * slidesPerGroup + slidesPerGroup)
+                                .map((member, index) => (
+                                    <div key={index} className="team-member-wrapper">
+                                        <TeamMember>
+                                            <div className="photo-container">
+                                                <img
+                                                    src={member.photo}
+                                                    alt={member.name}
+                                                    loading="lazy"
+                                                />
+                                            </div>
+                                            <motion.div
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                transition={{ duration: 0.5 }}
+                                            >
+                                            </motion.div>
+                                        </TeamMember>
+                                    </div>
+                                ))}
                         </TeamSlide>
                     ))}
                 </TeamSlider>
 
-                <SliderControls>
-                    <SliderButton onClick={prevSlide} aria-label="Previous slide">
-                        &lt;
+                {/* <SliderControls>
+                    <SliderButton onClick={prevGroup} aria-label="Previous group">
+                        <div className="arrow-2-left">
+                            <div className="arrow-2-top"></div>
+                            <div className="arrow-2-bottom"></div>
+                        </div>
                     </SliderButton>
-                    <SliderButton onClick={nextSlide} aria-label="Next slide">
-                        &gt;
+                    <SliderButton onClick={nextGroup} aria-label="Next group">
+                        <div className="arrow-2-right">
+                            <div className="arrow-2-top"></div>
+                            <div className="arrow-2-bottom"></div>
+                        </div>
                     </SliderButton>
-                </SliderControls>
+                </SliderControls> */}
 
                 <SliderDots>
-                    {teamMembers.map((_, index) => (
+                    {Array.from({ length: totalGroups }).map((_, index) => (
                         <button
                             key={index}
-                            className={index === currentSlide ? 'active' : ''}
-                            onClick={() => goToSlide(index)}
-                            aria-label={`Go to slide ${index + 1}`}
+                            className={index === currentGroup ? 'active' : ''}
+                            onClick={() => goToGroup(index)}
+                            aria-label={`Go to group ${index + 1}`}
                         />
                     ))}
                 </SliderDots>

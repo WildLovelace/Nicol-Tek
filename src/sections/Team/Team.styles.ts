@@ -1,65 +1,9 @@
-// import styled from 'styled-components';
-// import { theme } from '../../styles/theme';
-
-// export const TeamGrid = styled.div`
-//   display: grid;
-//   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-//   gap: 2rem;
-//   max-width: 1300px;
-//   margin: 0 auto;
-// `;
-
-// export const TeamMember = styled.div`
-//   text-align: center;
-//   background: white;
-//   border-radius: 8px;
-//   overflow: hidden;
-//   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-//   transition: all 0.3s ease;
-
-//   &:hover {
-//     transform: translateY(-10px);
-//     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-
-//     img {
-//       transform: scale(1.05);
-//     }
-//   }
-
-//   .photo-container {
-//     width: 100%;
-//     height: 250px;
-//     overflow: hidden;
-//   }
-
-//   img {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//     transition: transform 0.5s ease;
-//   }
-
-//   h3 {
-//     margin: 1.5rem 0 0.5rem;
-//     color: ${theme.colors.primary};
-//     font-size: 1.2rem;
-//   }
-
-//   p {
-//     color: ${theme.colors.text};
-//     padding: 0 1rem 1.5rem;
-//     font-size: 0.9rem;
-//   }
-// `;
-
-
 import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 
 export const TeamContainer = styled.div`
   position: relative;
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   overflow: hidden;
 `;
@@ -73,6 +17,15 @@ export const TeamSlide = styled.div`
   min-width: 100%;
   padding: 0 2rem;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .slide-group {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+  }
 `;
 
 export const TeamMember = styled.div`
@@ -82,11 +35,11 @@ export const TeamMember = styled.div`
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
-  padding-bottom: 2rem;
+  margin-right: 5px;
 
   .photo-container {
     width: 100%;
-    height: 400px;
+    height: 500px;
     overflow: hidden;
 
     img {
@@ -125,8 +78,8 @@ export const SliderButton = styled.button`
   background: ${theme.colors.primary};
   color: white;
   border: none;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -139,6 +92,74 @@ export const SliderButton = styled.button`
     background: ${theme.colors.accent};
     transform: scale(1.1);
   }
+
+  .arrow-2-left, .arrow-2-right {
+    cursor: pointer;
+    height: 125px;
+    width: 80px;
+    position: relative;
+    margin: 20px;
+}
+.arrow-2-left{
+  transform: scale(-1, 1);
+}
+
+.arrow-2-top, 
+.arrow-2-bottom {
+    background: white;
+    height: 10px;
+    left: 0;
+    position: absolute;
+    top: 60px;
+    width: 50px;
+}
+
+.arrow-2-top {
+    top: 64px;
+}
+
+.arrow-2-top {
+    transform: rotate(45deg);
+    transform-origin: bottom right;
+}
+
+.arrow-2-bottom {
+    transform: rotate(-45deg);
+    transform-origin: top right;
+}
+
+.arrow-2-top::after, 
+.arrow-2-bottom::after {
+    background: ${theme.colors.primary};
+    content: '';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: all 0.15s;
+}
+
+.arrow-2-top::after {
+    left: 100%;
+    right: 0;
+    transition-delay: 0s;
+}
+
+.arrow-2-bottom::after {
+    left: 0;
+    right: 100%;
+    transition-delay: 0.15s;
+}
+
+.arrow-2:hover .arrow-2-top::after {
+    left: 0;
+    transition-delay: 0.15s;
+}
+
+.arrow-2:hover .arrow-2-bottom::after {
+    right: 0;
+    transition-delay: 0s;
+}
+
 `;
 
 export const SliderDots = styled.div`

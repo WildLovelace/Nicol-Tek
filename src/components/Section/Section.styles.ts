@@ -7,20 +7,20 @@ interface SectionContainerProps {
 }
 
 export const SectionContainer = styled.section<SectionContainerProps>`
-  padding: 5rem 0;
+  padding: 1rem 0;
   background-color: ${({ bgColor }) => bgColor || theme.colors.light};
   color: ${({ textColor }) => textColor || theme.colors.text};
 `;
 
 export const SectionContent = styled.div`
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
 `;
 
 export const SectionTitle = styled.h2`
   font-size: 2.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   text-align: center;
   position: relative;
   font-family: ${theme.fonts.heading};

@@ -11,7 +11,7 @@ export const FooterContent = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  max-width: 1200px;
+ width: 90%;
   margin: 0 auto;
   padding: 0 2rem;
 `;
