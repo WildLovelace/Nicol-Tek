@@ -2,18 +2,18 @@ import styled from 'styled-components';
 import { theme } from '../../styles/theme';
 
 interface SectionContainerProps {
-    bgColor?: string;
-    textColor?: string;
+  bgColor?: string;
+  textColor?: string;
 }
 
 export const SectionContainer = styled.section<SectionContainerProps>`
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   background-color: ${({ bgColor }) => bgColor || theme.colors.light};
   color: ${({ textColor }) => textColor || theme.colors.text};
 `;
 
 export const SectionContent = styled.div`
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
   padding: 0 1rem;
 `;

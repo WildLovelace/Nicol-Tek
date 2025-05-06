@@ -15,15 +15,10 @@ const Hero: React.FC = () => {
     return (
         <HeroContainer>
             <HeroVideoBackground>
-                <iframe
-                    src="https://vk.com/video_ext.php?oid=-226531428&id=456239018&hd=4&autoplay=1&loop=1&muted=1&js_api=0"
-                    width="100%"
-                    height="100%"
-                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
-                    frameBorder="0"
-                    allowFullScreen
-                    title="Фоновое видео"
-                />
+                <video autoPlay loop muted playsInline preload="auto">
+                    <source src="/video/hero-background.webm" type="video/webm" />
+                    <source src="/video/hero-background.mp4" type="video/mp4" />
+                </video>
             </HeroVideoBackground>
 
             <HeroOverlay />
