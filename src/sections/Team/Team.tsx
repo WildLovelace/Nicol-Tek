@@ -6,8 +6,6 @@ import {
     TeamSlider,
     TeamSlide,
     TeamMember,
-    SliderControls,
-    SliderButton,
     SliderDots
 } from './Team.styles';
 
@@ -116,22 +114,6 @@ const Team: React.FC = () => {
                         </TeamSlide>
                     ))}
                 </TeamSlider>
-
-                {/* <SliderControls>
-                    <SliderButton onClick={prevGroup} aria-label="Previous group">
-                        <div className="arrow-2-left">
-                            <div className="arrow-2-top"></div>
-                            <div className="arrow-2-bottom"></div>
-                        </div>
-                    </SliderButton>
-                    <SliderButton onClick={nextGroup} aria-label="Next group">
-                        <div className="arrow-2-right">
-                            <div className="arrow-2-top"></div>
-                            <div className="arrow-2-bottom"></div>
-                        </div>
-                    </SliderButton>
-                </SliderControls> */}
-
                 <SliderDots>
                     {Array.from({ length: totalGroups }).map((_, index) => (
                         <button

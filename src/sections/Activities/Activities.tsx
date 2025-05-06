@@ -4,7 +4,6 @@ import { FaShippingFast, FaWarehouse, FaExchangeAlt } from 'react-icons/fa';
 import Section from '../../components/Section/Section';
 import { ActivitiesContent, ActivityCard } from './Activities.styles';
 
-// Явное приведение типов для иконок
 const ShippingFastIcon = FaShippingFast as React.ComponentType<{ size?: number }>;
 const WarehouseIcon = FaWarehouse as React.ComponentType<{ size?: number }>;
 const ExchangeAltIcon = FaExchangeAlt as React.ComponentType<{ size?: number }>;
@@ -13,20 +12,20 @@ const Activities: React.FC = () => {
     const activities = [
         {
             icon: <ShippingFastIcon size={40} />,
-            title: 'Организация перевозок',
-            description: 'Подбор оптимальных маршрутов и транспортных средств для ваших грузов',
+            title: 'Организация грузоперевозок',
+            description: 'Профессиональный подбор маршрутов и транспорта для ваших грузов. За 1.5 года работы мы организовали более 500 успешных перевозок по России',
         },
         {
             icon: <WarehouseIcon size={40} />,
-            title: 'Логистическое сопровождение',
-            description: 'Контроль за погрузкой, транспортировкой и разгрузкой грузов',
+            title: 'Полный логистический цикл',
+            description: 'Контроль всех этапов: от погрузки до доставки. Молодая, но опытная команда гарантирует сохранность вашего груза',
         },
         {
             icon: <ExchangeAltIcon size={40} />,
-            title: 'Посреднические услуги',
-            description: 'Сведение заказчиков и перевозчиков на взаимовыгодных условиях',
+            title: 'Посредничество в грузоперевозках',
+            description: 'Эффективное взаимодействие между заказчиками и проверенными перевозчиками. За короткий срок создали сеть из 50+ надежных партнеров',
         },
-    ];
+    ]
 
     return (
         <Section id="activities" title="Наша деятельность" bgColor="#f8f9fa">

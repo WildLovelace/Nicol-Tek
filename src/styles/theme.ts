@@ -7,6 +7,10 @@ export const theme = {
         dark: '#343a40',          // Тёмный цвет для текста
         text: '#495057',          // Основной цвет текста
         textLight: '#ffffff',     // Светлый текст
+        disabled: 'black',
+        textDisabled: 'black',
+        textDark: '#333333',
+        textSecondary: '#666666',
     },
     fonts: {
         main: "'Roboto', sans-serif",

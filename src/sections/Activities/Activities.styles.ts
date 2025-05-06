@@ -9,7 +9,11 @@ export const ActivitiesContent = styled.div`
 `;
 
 export const ActivityCard = styled.div`
-height: 300px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+  height: 350px;
   background: white;
   padding: 2rem;
   border-radius: 8px;
@@ -29,7 +33,9 @@ height: 300px;
   }
 
   p {
+    width: 100%;
     color: ${theme.colors.text};
+    text-align: center;
     line-height: 1.6;
   }
 `;

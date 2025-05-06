@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { HeaderContainer, Nav, Logo, NavList, NavItem, MobileMenuButton } from './Header.styles';
+import { theme } from '../../styles/theme';
 
 const Header: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -14,6 +15,16 @@ const Header: React.FC = () => {
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > parseInt(theme.breakpoints.md)) {
+                setIsMenuOpen(false);
+            }
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     const navItems = [
@@ -36,9 +47,12 @@ const Header: React.FC = () => {
         <HeaderContainer ref={ref} isScrolled={isScrolled} isMenuOpen={isMenuOpen}>
             <Nav>
                 <Logo onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                    <img src='images/logo.png' alt='LOGO'></img>
+                    <img src='images/logo.png' alt='LOGO' />
                 </Logo>
-                <MobileMenuButton onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                <MobileMenuButton
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    isMenuOpen={isMenuOpen}
+                >
                     <span />
                     <span />
                     <span />

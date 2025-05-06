@@ -19,14 +19,13 @@ export const ContactInfo = styled.div`
     margin-bottom: 2rem;
   }
 
-  .conteiner{
+  .conteiner {
     display: flex;
     
     .map-and-contact{
     width: 100%;
     height: 100%;
     display: flex;
-
     
   .contacts{
     height: auto;
@@ -41,6 +40,10 @@ export const ContactInfo = styled.div`
     align-items: flex-start;
     gap: 1rem;
     margin-bottom: 1.5rem;
+
+    a {
+      font-size: 1.3rem;
+    }
 
     svg {
       color: ${theme.colors.accent};
@@ -68,8 +71,9 @@ export const ContactInfo = styled.div`
     object-fit: cover;
   }
   .btn-conteiner{
+    width: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
   }
   }

@@ -4,7 +4,6 @@ import { FaTruck, FaHandshake, FaChartLine } from 'react-icons/fa';
 import Section from '../../components/Section/Section';
 import { AboutContent, AboutItem } from './About.styles';
 
-// Явное приведение типов для иконок
 const TruckIcon = FaTruck as React.ComponentType<{ size?: number }>;
 const HandshakeIcon = FaHandshake as React.ComponentType<{ size?: number }>;
 const ChartLineIcon = FaChartLine as React.ComponentType<{ size?: number }>;
@@ -13,18 +12,18 @@ const About: React.FC = () => {
     const aboutItems = [
         {
             icon: <TruckIcon size={50} />,
-            title: 'Опыт в грузоперевозках',
-            description: 'Более 10 лет успешной работы на рынке транспортных услуг',
+            title: 'Профессиональный подход',
+            description: 'Команда с 10-летним опытом в логистике. За 1.5 года реализовали 200+ транспортных проектов с 98% положительных отзывов',
         },
         {
             icon: <HandshakeIcon size={50} />,
-            title: 'Надежные партнеры',
-            description: 'Сотрудничаем только с проверенными перевозчиками и заказчиками',
+            title: 'Проверенные партнеры',
+            description: 'Собственная база из 30+ надежных перевозчиков. Тщательный отбор каждого партнера для гарантии сохранности грузов',
         },
         {
             icon: <ChartLineIcon size={50} />,
-            title: 'Стабильный рост',
-            description: 'Ежегодно увеличиваем объемы перевозок и количество клиентов',
+            title: 'Динамичное развитие',
+            description: 'За первые 1.5 года удвоили клиентскую базу и расширили географию перевозок на 15 регионов России',
         },
     ];
 
@@ -37,9 +36,9 @@ const About: React.FC = () => {
                     transition={{ duration: 0.6 }}
                     viewport={{ once: true }}
                 >
-                    НИКОЛЬ ТЕК - это профессиональный посредник между перевозчиками и заказчиками,
-                    обеспечивающий оптимальные логистические решения с 2012 года.
-                    Наша миссия - сделать процесс грузоперевозок простым, надежным и выгодным для всех участников.
+                    НИКОЛЬ ТЭК - ведущий логистический оператор и профессиональный посредник между перевозчиками и заказчиками грузов в России.
+                    С 2023 года мы обеспечиваем надежные грузоперевозки по всей стране, предлагая оптимальные транспортно-логистические решения.
+                    Наша миссия - сделать организацию перевозок максимально простой, безопасной и выгодной для всех участников процесса.
                 </motion.p>
 
                 <div style={{ marginTop: '3rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>

@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
         <FooterContainer>
             <FooterContent>
                 <FooterSection>
-                    <FooterTitle>НИКОЛЬ ТЕК</FooterTitle>
+                    <FooterTitle>НИКОЛЬ ТЭК</FooterTitle>
                     <p>Посредник между перевозчиками и заказчиками, обеспечивающий надежные и выгодные решения в сфере грузоперевозок.</p>
                 </FooterSection>
 

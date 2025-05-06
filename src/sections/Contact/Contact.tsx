@@ -1,41 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import Button from '../../components/Button/Button';
 import Section from '../../components/Section/Section';
-import { ContactContainer, ContactInfo, ContactForm, FormGroup } from './Contact.styles';
+import { ContactContainer, ContactInfo } from './Contact.styles';
 
-// Явное приведение типов для иконок
 const PhoneIcon = FaPhone as React.ComponentType;
 const EnvelopeIcon = FaEnvelope as React.ComponentType;
 const MapMarkerAltIcon = FaMapMarkerAlt as React.ComponentType;
 
 const Contact: React.FC = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        message: '',
-    });
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-    };
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        console.log('Form submitted:', formData);
-        alert('Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.');
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            message: '',
-        });
-    };
-
     return (
+
         <Section id="contact" title="Свяжитесь с нами">
             <ContactContainer>
                 <motion.div
@@ -54,7 +30,7 @@ const Contact: React.FC = () => {
                                         <PhoneIcon />
                                         <div>
                                             <h4>Телефон</h4>
-                                            <p>+79525830337</p>
+                                            <a href='tel:+7(952)5830337'>+7(952)5830337</a>
                                         </div>
                                     </div>
 
@@ -62,7 +38,7 @@ const Contact: React.FC = () => {
                                         <EnvelopeIcon />
                                         <div>
                                             <h4>Email</h4>
-                                            <p>NikolTEK1@yandex.ru</p>
+                                            <a href='mailto:NikolTEK1@yandex.ru'>NikolTEK1@yandex.ru</a>
                                         </div>
                                     </div>
 
@@ -75,7 +51,13 @@ const Contact: React.FC = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6bfadd3c23eb8529c4a0011f81fffbc3b0ecd7d10cdc7c5c7ae761558f766c97&amp;source=constructor" width="600" height="400"></iframe>
+                                <div className="map">
+                                    <iframe
+                                        src="https://yandex.ru/map-widget/v1/?um=constructor%3A6bfadd3c23eb8529c4a0011f81fffbc3b0ecd7d10cdc7c5c7ae761558f766c97&amp;source=constructor"
+                                        width="600"
+                                        height="400"
+                                    />
+                                </div>
                             </div>
                             <div className="img-conteiner">
                                 <img src="images/assets/team.png" alt="Team" />
