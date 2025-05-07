@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { theme } from '../../styles/theme';
+import styled from "styled-components";
+import { theme } from "../../styles/theme";
 
 export const FooterContainer = styled.footer`
   background-color: ${theme.colors.dark};
@@ -58,7 +58,7 @@ export const FooterTitle = styled.h3`
   display: inline-block;
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -5px;
     left: 0;

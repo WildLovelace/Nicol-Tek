@@ -1,30 +1,36 @@
-import styled from 'styled-components';
-import { theme } from '../../styles/theme';
+import styled from "styled-components";
+import { theme } from "../../styles/theme";
 
 export const TeamContainer = styled.div`
   position: relative;
   width: 100%;
+  max-width: 1400px;
   margin: 0 auto;
   overflow: hidden;
+  padding: 0 1rem;
+
+  @media (max-width: ${theme.breakpoints.sm}) {
+    padding: 0 0.5rem;
+  }
 `;
 
 export const TeamSlider = styled.div`
   display: flex;
   width: 100%;
+  transition: transform 0.5s ease;
 `;
 
 export const TeamSlide = styled.div`
   min-width: 100%;
-  padding: 0 2rem;
+  padding: 0 1rem;
   box-sizing: border-box;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  gap: 1.5rem;
+  justify-content: center;
 
-  .slide-group {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
+  @media (max-width: ${theme.breakpoints.lg}) {
+    padding: 0 0.75rem;
+    gap: 1rem;
   }
 `;
 
@@ -35,11 +41,13 @@ export const TeamMember = styled.div`
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
-  margin-right: 5px;
+  flex: 1;
+  min-width: calc(33.333% - 1rem);
+  max-width: calc(33.333% - 1rem);
 
   .photo-container {
     width: 100%;
-    height: 500px;
+    height: 350px;
     overflow: hidden;
 
     img {
@@ -50,128 +58,78 @@ export const TeamMember = styled.div`
     }
   }
 
+  .member-info {
+    padding: 1.5rem 1rem;
+  }
+
   h3 {
-    margin: 1.5rem 0 0.5rem;
+    margin: 0 0 0.5rem;
     color: ${theme.colors.primary};
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   p {
     color: ${theme.colors.text};
-    padding: 0 1rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
   }
-`;
-
-export const SliderControls = styled.div`
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 1rem;
-  box-sizing: border-box;
-  transform: translateY(-50%);
-`;
-
-export const SliderButton = styled.button`
-  background: ${theme.colors.primary};
-  color: white;
-  border: none;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 2rem;
 
   &:hover {
-    background: ${theme.colors.accent};
-    transform: scale(1.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+    img {
+      transform: scale(1.05);
+    }
   }
 
-  .arrow-2-left, .arrow-2-right {
-    cursor: pointer;
-    height: 125px;
-    width: 80px;
-    position: relative;
-    margin: 20px;
-}
-.arrow-2-left{
-  transform: scale(-1, 1);
-}
+  @media (max-width: ${theme.breakpoints.lg}) {
+    min-width: calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
 
-.arrow-2-top, 
-.arrow-2-bottom {
-    background: white;
-    height: 10px;
-    left: 0;
-    position: absolute;
-    top: 60px;
-    width: 50px;
-}
+    .photo-container {
+      height: 300px;
+    }
+  }
 
-.arrow-2-top {
-    top: 64px;
-}
+  @media (max-width: ${theme.breakpoints.md}) {
+    .photo-container {
+      height: 250px;
+    }
 
-.arrow-2-top {
-    transform: rotate(45deg);
-    transform-origin: bottom right;
-}
+    .member-info {
+      padding: 1rem 0.75rem;
+    }
 
-.arrow-2-bottom {
-    transform: rotate(-45deg);
-    transform-origin: top right;
-}
+    h3 {
+      font-size: 1.1rem;
+    }
 
-.arrow-2-top::after, 
-.arrow-2-bottom::after {
-    background: ${theme.colors.primary};
-    content: '';
-    height: 100%;
-    position: absolute;
-    top: 0;
-    transition: all 0.15s;
-}
+    p {
+      font-size: 0.9rem;
+    }
+  }
 
-.arrow-2-top::after {
-    left: 100%;
-    right: 0;
-    transition-delay: 0s;
-}
+  @media (max-width: ${theme.breakpoints.sm}) {
+    min-width: 100%;
+    max-width: 100%;
 
-.arrow-2-bottom::after {
-    left: 0;
-    right: 100%;
-    transition-delay: 0.15s;
-}
-
-.arrow-2:hover .arrow-2-top::after {
-    left: 0;
-    transition-delay: 0.15s;
-}
-
-.arrow-2:hover .arrow-2-bottom::after {
-    right: 0;
-    transition-delay: 0s;
-}
-
+    .photo-container {
+      height: 280px;
+    }
+  }
 `;
 
 export const SliderDots = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   gap: 0.5rem;
   height: 15px;
 
   button {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     border: none;
     background: #ccc;
@@ -187,5 +145,9 @@ export const SliderDots = styled.div`
     &:hover {
       background: ${theme.colors.accent};
     }
+  }
+
+  @media (max-width: ${theme.breakpoints.sm}) {
+    margin-top: 1rem;
   }
 `;

@@ -45,7 +45,7 @@ const Advantages: React.FC = () => {
                         viewport={{ once: true }}
                     >
                         <AdvantageItem>
-                            <div style={{ color: '#3498db', marginBottom: '1rem' }}>{advantage.icon}</div>
+                            <div className="advantage-icon">{advantage.icon}</div>
                             <h3>{advantage.title}</h3>
                             <p>{advantage.description}</p>
                         </AdvantageItem>

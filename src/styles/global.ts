@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -36,6 +36,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 0 1rem 0;
     font-weight: 700;
     line-height: 1.2;
+    text-align: center !important;
   }
 
   h1 {

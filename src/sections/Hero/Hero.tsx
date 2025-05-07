@@ -33,10 +33,10 @@ const Hero: React.FC = () => {
                     <HeroTitle>НИКОЛЬ ТЭК</HeroTitle>
                     <p>Надежный посредник между перевозчиками и заказчиками. Мы создаем мосты между вашими грузами и их пунктом назначения.</p>
                     <HeroButtons>
-                        <Button variant="primary" size="large" >
+                        <Button variant="primary" size="large">
                             Стать клиентом
                         </Button>
-                        <Button variant="primary" size="large" >
+                        <Button variant="outline" size="large">
                             Присоединиться к команде
                         </Button>
                     </HeroButtons>

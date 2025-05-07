@@ -41,7 +41,7 @@ const About: React.FC = () => {
                     Наша миссия - сделать организацию перевозок максимально простой, безопасной и выгодной для всех участников процесса.
                 </motion.p>
 
-                <div style={{ marginTop: '3rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+                <div className="about-items-grid">
                     {aboutItems.map((item, index) => (
                         <motion.div
                             key={index}
@@ -51,8 +51,8 @@ const About: React.FC = () => {
                             viewport={{ once: true }}
                         >
                             <AboutItem>
-                                <div style={{ color: '#3498db', marginBottom: '1rem' }}>{item.icon}</div>
-                                <h3 style={{ marginBottom: '0.5rem', color: '#2c3e50' }}>{item.title}</h3>
+                                <div className="about-item-icon">{item.icon}</div>
+                                <h3>{item.title}</h3>
                                 <p>{item.description}</p>
                             </AboutItem>
                         </motion.div>

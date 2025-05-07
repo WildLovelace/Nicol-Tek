@@ -39,7 +39,7 @@ const Activities: React.FC = () => {
                         viewport={{ once: true }}
                     >
                         <ActivityCard>
-                            <div style={{ color: '#e74c3c', marginBottom: '1rem' }}>{activity.icon}</div>
+                            <div className="activity-icon">{activity.icon}</div>
                             <h3>{activity.title}</h3>
                             <p>{activity.description}</p>
                         </ActivityCard>

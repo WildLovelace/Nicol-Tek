@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { theme } from '../../styles/theme';
+import styled from "styled-components";
+import { theme } from "../../styles/theme";
 
 interface HeaderContainerProps {
   isScrolled: boolean;
@@ -17,12 +17,12 @@ export const HeaderContainer = styled.header<HeaderContainerProps>`
   width: 100%;
   z-index: 1000;
   background-color: ${({ isScrolled }) =>
-    isScrolled ? 'rgba(44, 62, 80, 0.9)' : 'transparent'};
+    isScrolled ? "rgba(44, 62, 80, 0.9)" : "transparent"};
   transition: all 0.3s ease;
-  padding: 2rem 0;
-  backdrop-filter: ${({ isScrolled }) => (isScrolled ? 'blur(10px)' : 'none')};
+  padding: 1.5rem 0;
+  backdrop-filter: ${({ isScrolled }) => (isScrolled ? "blur(10px)" : "none")};
   box-shadow: ${({ isScrolled }) =>
-    isScrolled ? '0 2px 10px rgba(0, 0, 0, 0.1)' : 'none'};
+    isScrolled ? "0 2px 10px rgba(0, 0, 0, 0.1)" : "none"};
 `;
 
 export const Nav = styled.nav`
@@ -72,7 +72,7 @@ export const NavList = styled.ul<{ isMenuOpen: boolean }>`
   padding: 0;
 
   @media (max-width: ${theme.breakpoints.md}) {
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     position: fixed;
     top: 0;
     left: 0;
@@ -83,10 +83,10 @@ export const NavList = styled.ul<{ isMenuOpen: boolean }>`
     padding: 2rem 0;
     gap: 1.5rem;
     clip-path: ${({ isMenuOpen }) =>
-    isMenuOpen ? 'circle(150% at 90% -10%)' : 'circle(0px at 90% -10%)'};
+      isMenuOpen ? "circle(150% at 90% -10%)" : "circle(0px at 90% -10%)"};
     transition: clip-path 0.5s ease-in-out, opacity 0.3s ease;
     opacity: ${({ isMenuOpen }) => (isMenuOpen ? 1 : 0)};
-    pointer-events: ${({ isMenuOpen }) => (isMenuOpen ? 'all' : 'none')};
+    pointer-events: ${({ isMenuOpen }) => (isMenuOpen ? "all" : "none")};
     height: 100vh;
     overflow-y: auto;
   }
@@ -143,18 +143,18 @@ export const MobileMenuButton = styled.div<MobileMenuButtonProps>`
 
     &:nth-child(1) {
       transform: ${({ isMenuOpen }) =>
-    isMenuOpen ? 'rotate(45deg) translate(1px, -2px)' : 'rotate(0)'};
+        isMenuOpen ? "rotate(45deg) translate(1px, -2px)" : "rotate(0)"};
     }
 
     &:nth-child(2) {
       opacity: ${({ isMenuOpen }) => (isMenuOpen ? 0 : 1)};
       transform: ${({ isMenuOpen }) =>
-    isMenuOpen ? 'translateX(-20px)' : 'translateX(0)'};
+        isMenuOpen ? "translateX(-20px)" : "translateX(0)"};
     }
 
     &:nth-child(3) {
       transform: ${({ isMenuOpen }) =>
-    isMenuOpen ? 'rotate(-45deg) translate(1px, 2px)' : 'rotate(0)'};
+        isMenuOpen ? "rotate(-45deg) translate(1px, 2px)" : "rotate(0)"};
     }
   }
 

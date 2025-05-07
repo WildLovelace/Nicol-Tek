@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Section from '../../components/Section/Section';
+import { theme } from '../../styles/theme';
 import {
     TeamContainer,
     TeamSlider,
@@ -19,7 +20,7 @@ const Team: React.FC = () => {
         {
             name: 'Опытные специалисты',
             position: 'Команда менеджеров',
-            photo: '/images/assets/8.jpg',
+            photo: '/images/assets/2.jpg',
         },
         {
             name: 'Слаженная работа',
@@ -36,31 +37,14 @@ const Team: React.FC = () => {
             position: 'Команда менеджеров',
             photo: '/images/assets/5.jpg',
         },
-        {
-            name: 'Слаженная работа',
-            position: 'Транспортные эксперты',
-            photo: '/images/assets/6.jpg',
-        },
-        {
-            name: 'Наша команда',
-            position: 'Профессионалы в логистике',
-            photo: '/images/assets/7.jpg',
-        },
-        {
-            name: 'Опытные специалисты',
-            position: 'Команда менеджеров',
-            photo: '/images/assets/2.jpg',
-        },
-        {
-            name: 'Слаженная работа',
-            position: 'Транспортные эксперты',
-            photo: '/images/assets/9.jpg',
-        },
     ];
 
     const [currentGroup, setCurrentGroup] = useState(0);
     const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-    const slidesPerGroup = 3;
+    let slidesPerGroup = 3;
+    if (theme.breakpoints.md) {
+        slidesPerGroup = 1;
+    }
     const totalGroups = Math.ceil(teamMembers.length / slidesPerGroup);
 
     useEffect(() => {

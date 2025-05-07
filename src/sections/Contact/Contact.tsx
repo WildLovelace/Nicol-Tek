@@ -46,8 +46,7 @@ const Contact: React.FC = () => {
                                         <MapMarkerAltIcon />
                                         <div>
                                             <h4>Адрес</h4>
-                                            <p>Соборный 94/139</p>
-                                            <p>6 Этаж</p>
+                                            <p>Соборный 94/139 6 Этаж</p>
                                         </div>
                                     </div>
                                 </div>
