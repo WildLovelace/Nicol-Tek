@@ -19,10 +19,11 @@ export const SectionContainer = styled.section<SectionContainerProps>`
   position: relative;
   overflow: hidden;
   width: 100%;
+  margin: 1rem;
 `;
 
 export const SectionContent = styled.div<SectionContainerProps>`
-  max-width: ${({ fullWidth }) => (fullWidth ? "100%" : "1200px")};
+  max-width: ${({ fullWidth }) => (fullWidth ? "100%" : "1600px")};
   width: 95%;
   margin: 0 auto;
   padding: ${({ fullWidth }) => (fullWidth ? "0" : "0 1.5rem")};
@@ -35,7 +36,7 @@ export const SectionContent = styled.div<SectionContainerProps>`
 
 export const SectionTitle = styled.h2<TitleProps>`
   font-size: clamp(1.8rem, 5vw, 2.8rem);
-  margin-bottom: 1.5rem;
+  margin: 2rem auto !important;
   text-align: ${({ align }) => align};
   position: relative;
   font-family: ${theme.fonts.heading};

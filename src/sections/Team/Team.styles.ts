@@ -4,7 +4,7 @@ import { theme } from "../../styles/theme";
 export const TeamContainer = styled.div`
   position: relative;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   overflow: hidden;
   padding: 0 1rem;
@@ -42,8 +42,6 @@ export const TeamMember = styled.div`
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   flex: 1;
-  min-width: calc(33.333% - 1rem);
-  max-width: calc(33.333% - 1rem);
 
   .photo-container {
     width: 100%;

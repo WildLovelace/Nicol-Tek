@@ -41,12 +41,24 @@ const Team: React.FC = () => {
 
   const [currentGroup, setCurrentGroup] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  let slidesPerGroup;
-  if (theme.breakpoints.md) {
-    slidesPerGroup = 1;
-  } else {
-    slidesPerGroup = 3;
-  }
+
+  const [slidesPerGroup, setSlidesPerGroup] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setSlidesPerGroup(1);
+      } else {
+        setSlidesPerGroup(3);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const totalGroups = Math.ceil(teamMembers.length / slidesPerGroup);
 
