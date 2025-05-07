@@ -49,12 +49,7 @@ export const SectionTitle = styled.h2<TitleProps>`
     width: ${({ align }) => (align === "center" ? "80px" : "60px")};
     height: 4px;
     background-color: ${theme.colors.accent};
-    margin: ${({ align }) =>
-      align === "center"
-        ? "1.5rem auto 0"
-        : align === "right"
-        ? "1.5rem 0 0 auto"
-        : "1.5rem 0 0"};
+    margin: 0 auto;
     transition: width 0.3s ease;
 
     @media (max-width: ${theme.breakpoints.md}) {
